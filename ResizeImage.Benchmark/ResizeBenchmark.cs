@@ -16,7 +16,8 @@ public class ResizeBenchmark
 
     #region Properties
 
-    [Params(100, 500, 800)] public int Width;
+    [Params(1280)] public int Width;
+    [Params(720)] public int Height;
 
     #endregion
 
@@ -29,19 +30,19 @@ public class ResizeBenchmark
     [Benchmark]
     public void ResizeImageSharp()
     {
-        var res = _imageSharpController.ResizeImage(Width, Width, ImageBase64Encoded)
+        var res = _imageSharpController.ResizeImage(Width, Height, ImageBase64Encoded)
             .GetAwaiter().GetResult();
     }
 
     [Benchmark]
     public void ResizeSkiaSharp()
     {
-        var res = _skiaSharpController.ResizeImage(Width, Width, ImageBase64Encoded);
+        var res = _skiaSharpController.ResizeImage(Width, Height, ImageBase64Encoded);
     }
 
     [Benchmark]
     public void ResizeSystemDrawning()
     {
-        var res = _systemDrawingController.ResizeImage(Width, Width, ImageBase64Encoded);
+        var res = _systemDrawingController.ResizeImage(Width, Height, ImageBase64Encoded);
     }
 }
