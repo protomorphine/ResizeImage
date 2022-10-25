@@ -6,7 +6,7 @@ namespace ResizeImage.API.Controllers;
 
 [ApiController]
 [Route("api/SystemDrawning/image")]
-public class SystemDrawningController : ControllerBase
+public class SystemDrawingController : ControllerBase
 {
     /// <summary>
     /// Изменение размера изображения с помощью System.Drawning
