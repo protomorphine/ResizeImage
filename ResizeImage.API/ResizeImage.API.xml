@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ResizeImage.API</name>
+    </assembly>
+    <members>
+        <member name="M:ResizeImage.API.Controllers.ImageSharpController.ResizeImage(System.Int32,System.Int32,System.String)">
+            <summary>
+            Изменение размера изображения с помощью ImageSharp
+            </summary>
+            <param name="newWidth">новая ширина изображения</param>
+            <param name="newHeight">новая высота изображения</param>
+            <param name="encodedImage">изображение, закодированное в base64</param>
+            <returns>Изображение с измененным размером</returns>
+        </member>
+        <member name="M:ResizeImage.API.Controllers.ImageSharpController.ScaleImage(System.Int32,System.String)">
+            <summary>
+            Изменнеие размера изображения с помощью ImageSharp
+            </summary>
+            <param name="scaleRatio">значение изменнеия размера изображения в процентах</param>
+            <param name="encodedImage">изображение, закодированное в base64</param>
+            <returns>Изображение с измененным размером</returns>
+        </member>
+        <member name="M:ResizeImage.API.Controllers.SkiaSharpController.ResizeImage(System.Int32,System.Int32,System.String)">
+            <summary>
+            Изменение размера изображения с помощью SkiaSharp
+            </summary>
+            <param name="newWidth">новая ширина изображения</param>
+            <param name="newHeight">новая высота изображения</param>
+            <param name="encodedImage">изображение, закодированное в base64</param>
+            <returns>Изображение с измененным размером</returns>
+        </member>
+        <member name="M:ResizeImage.API.Controllers.SkiaSharpController.ScaleImage(System.Int32,System.String)">
+            <summary>
+            Изменнеие размера изображения с помощью SkiaSharp
+            </summary>
+            <param name="scaleRatio">значение изменнеия размера изображения в процентах</param>
+            <param name="encodedImage">изображение, закодированное в base64</param>
+            <returns>Изображение с измененным размером</returns>
+        </member>
+        <member name="M:ResizeImage.API.Controllers.SystemDrawingController.ResizeImage(System.Int32,System.Int32,System.String)">
+            <summary>
+            Изменение размера изображения с помощью System.Drawning
+            </summary>
+            <param name="newWidth">новая ширина изображения</param>
+            <param name="newHeight">новая высота изображения</param>
+            <param name="encodedImage">изображение, закодированное в base64</param>
+            <returns>Изображение с измененным размером</returns>
+        </member>
+        <member name="M:ResizeImage.API.Controllers.SystemDrawingController.ScaleImage(System.Int32,System.String)">
+            <summary>
+            Изменнеие размера изображения с помощью System.Drawning
+            </summary>
+            <param name="scaleRatio">значение изменнеия размера изображения в процентах</param>
+            <param name="encodedImage">изображение, закодированное в base64</param>
+            <returns>Изображение с измененным размером</returns>
+        </member>
+    </members>
+</doc>

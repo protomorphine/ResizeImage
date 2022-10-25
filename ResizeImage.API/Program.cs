@@ -5,7 +5,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(op =>
+{
+    var xmlFilePaths = new[]
+    {
+        "ResizeImage.API.xml"
+    };
+
+    foreach (var xmlFilePath in xmlFilePaths)
+    {
+        var path = Path.Combine(AppContext.BaseDirectory, xmlFilePath);
+        op.IncludeXmlComments(path);
+    }
+});
 
 var app = builder.Build();
 
