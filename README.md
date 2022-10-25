@@ -15,5 +15,5 @@ AMD Ryzen 5 5500U with Radeon Graphics, 1 CPU, 12 logical and 6 physical cores
   DefaultJob : .NET 6.0.8 (6.0.822.36306), X64 RyuJIT AVX2
 
 ```
-
+Resize FullHD screenshot to HD.
 ![image](https://user-images.githubusercontent.com/6265637/197702678-14e1ff18-cb01-4cc9-97e4-97b0d1902d29.png)
