@@ -15,7 +15,7 @@ public class SystemDrawingController : ControllerBase
     /// <param name="newHeight">новая высота изображения</param>
     /// <param name="encodedImage">изображение, закодированное в base64</param>
     /// <returns>Изображение с измененным размером</returns>
-    [HttpPost("resize/{newWight}/{newHeight}")]
+    [HttpPost("resize/{newWidth}/{newHeight}")]
     public IActionResult ResizeImage(int newWidth, int newHeight, [FromBody] string encodedImage)
     {
         using var stream = new MemoryStream(Convert.FromBase64String(encodedImage));
