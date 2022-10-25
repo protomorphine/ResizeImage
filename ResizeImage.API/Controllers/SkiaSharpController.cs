@@ -15,9 +15,9 @@ public class SkiaSharpController : ControllerBase
     /// <param name="encodedImage">изображение, закодированное в base64</param>
     /// <returns>Изображение с измененным размером</returns>
     [HttpPost("resize/{newWidth}/{newHeight}")]
-    public IActionResult ResizeImage(int newWidth, int newHeight, [FromBody] string encodedImage)
+    public async Task<IActionResult> ResizeImage(int newWidth, int newHeight, [FromBody] string encodedImage)
     {
-        using var stream = new MemoryStream(Convert.FromBase64String(encodedImage));
+        await using var stream = new MemoryStream(Convert.FromBase64String(encodedImage));
 
         using var bitmap = SKBitmap.Decode(stream);
 

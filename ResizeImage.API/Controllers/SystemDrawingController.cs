@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ResizeImage.API.Controllers;
 
 [ApiController]
-[Route("api/SystemDrawning/image")]
+[Route("api/SystemDrawing/image")]
 public class SystemDrawingController : ControllerBase
 {
     /// <summary>
@@ -16,9 +16,9 @@ public class SystemDrawingController : ControllerBase
     /// <param name="encodedImage">изображение, закодированное в base64</param>
     /// <returns>Изображение с измененным размером</returns>
     [HttpPost("resize/{newWidth}/{newHeight}")]
-    public IActionResult ResizeImage(int newWidth, int newHeight, [FromBody] string encodedImage)
+    public async Task<IActionResult> ResizeImage(int newWidth, int newHeight, [FromBody] string encodedImage)
     {
-        using var stream = new MemoryStream(Convert.FromBase64String(encodedImage));
+        await using var stream = new MemoryStream(Convert.FromBase64String(encodedImage));
 
         using var image = Image.FromStream(stream);
         using var destinationBitmap = new Bitmap(newWidth, newHeight);
@@ -30,7 +30,7 @@ public class SystemDrawingController : ControllerBase
         var converter = new ImageConverter();
         var byteArrayImage = (byte[]) converter.ConvertTo(destinationBitmap, typeof(byte[]));
 
-        return File(byteArrayImage, "image/jpeg");
+        return File(byteArrayImage!, "image/jpeg");
     }
 
     /// <summary>

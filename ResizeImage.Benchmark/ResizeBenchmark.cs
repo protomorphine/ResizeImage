@@ -37,12 +37,14 @@ public class ResizeBenchmark
     [Benchmark]
     public void ResizeSkiaSharp()
     {
-        var res = _skiaSharpController.ResizeImage(Width, Height, ImageBase64Encoded);
+        var res = _skiaSharpController.ResizeImage(Width, Height, ImageBase64Encoded)
+            .GetAwaiter().GetResult();
     }
 
     [Benchmark]
     public void ResizeSystemDrawning()
     {
-        var res = _systemDrawingController.ResizeImage(Width, Height, ImageBase64Encoded);
+        var res = _systemDrawingController.ResizeImage(Width, Height, ImageBase64Encoded)
+            .GetAwaiter().GetResult();
     }
 }
